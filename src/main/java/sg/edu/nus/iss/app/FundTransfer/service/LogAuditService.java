@@ -17,14 +17,14 @@ public class LogAuditService {
     public JsonObject generateJsonData(Account from, Account to, float amount, String transactionId){
 
         String date = java.time.LocalDate.now().toString();
-        
+        System.out.println(String.valueOf(amount));
 
         JsonObject value = Json.createObjectBuilder()
         .add("transactionId", transactionId)
         .add("date", date)
         .add("from_account", from.getAccountId())
         .add("to_account", to.getAccountId())
-        .add("amount", amount)
+        .add("amount", String.valueOf(amount))
         .build();
 
         return value ;
