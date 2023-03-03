@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Bank</title>
+</head>
+<body>
+
+    <div>
+        <form method="POST" data-th-action="@{/transfer}">
+
+            <h1>Funds Transfer</h1>
+            <table>
+                <tr>
+                    <td>From Account: </td>
+                    <td>
+                        <select name="faccount">
+                            <option data-th-each="result: ${result}" th:value="${result.name}" th:text="${result.text}" >
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>To Account: </td>
+                    <td>
+                        <select name="taccount">
+                            <option data-th-each="result: ${result}" th:value="${result.name}" th:text="${result.text}" >
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Amount: </td>
+                    <td>
+                        <input type="number" step="0.01" name="amount" size="30" value="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Comments</td>
+                    <td>
+                        <textarea name="comments" cols="30" rows="4"></textarea>
+                    </td>
+                </tr>
+                    <td>
+                        <button type="submit">Tranfer</button>
+                    </td>
+                </tr>
+                </tr>
+                <td>
+                    <span style="color:red" data-th-text="${error}"></span>
+                </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

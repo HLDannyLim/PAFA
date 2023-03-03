@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view1</title>
+</head>
+<body>
+
+    <ul data-th-each="result: ${result}">
+        <li>
+            <!-- <a data-th-href="${result.name}"> -->
+                id :  <span data-th-text="${result.accountId}"></span>
+                <br>
+                name :  <span data-th-text="${result.name}"></span>
+                <br>
+                balance :  <span data-th-text="${result.balance}"></span>
+                <br>
+                <!-- Delivery Date :  <span data-th-text="${result.deliveryDate}"></span>
+                <br>
+                Score :  <span data-th-text="${result.score}"></span>
+                <br>
+                Emailandname: <span data-th-text="${result.emailandname}"></span> -->
+        </li>
+        <!-- <li data-th-each="results: ${result.lineItems}">
+                Item :  <span data-th-text="${results.item}"></span>
+                <br>
+                Quantity :  <span data-th-text="${results.quantity}"></span>
+        </li> -->
+
+    </ul>
+</body>
+</html>
