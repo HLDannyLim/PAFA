@@ -16,4 +16,3 @@ INSERT INTO `accounts` (`account_id`, `name`, `balance`) VALUES ("ckTV56axff", '
 INSERT INTO `accounts` (`account_id`, `name`, `balance`) VALUES ("Qgcnwbshbh", 'pebbles', 50);
 INSERT INTO `accounts` (`account_id`, `name`, `balance`) VALUES ("if9l185l18", 'bambam', 50);
 
-select * from accounts;

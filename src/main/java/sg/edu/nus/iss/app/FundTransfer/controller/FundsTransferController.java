@@ -35,9 +35,15 @@ public class FundsTransferController {
         List<Account> result = new LinkedList<>();
         result = accRepo.findAllAccount();
         String error = (String) sess.getAttribute("error");
+        float amount = 10f;
+        if(sess.getAttribute("amount") != null)
+        amount = (float) sess.getAttribute("amount");
+        String comment = (String) sess.getAttribute("comment");
 
         model.addAttribute("result", result);
         model.addAttribute("error", error);
+        model.addAttribute("amount", amount);
+        model.addAttribute("comment", comment);
         return "view0";
     }
 
@@ -61,11 +67,15 @@ public class FundsTransferController {
         if(checkAccount == false){
             model.addAttribute("error", "Please check your Account");
             sess.setAttribute("error", "Please check your Account");
+            sess.setAttribute("amount", amount);
+            sess.setAttribute("comment", form.getFirst("comment"));
             return "redirect:/";
         }
         if(checkAmount == false){
             model.addAttribute("error", "Please check your Amount");
             sess.setAttribute("error", "Please check your Amount");
+            sess.setAttribute("amount", amount);
+            sess.setAttribute("comment", form.getFirst("comment"));
             return "redirect:/";
         }
 
@@ -94,6 +104,7 @@ public class FundsTransferController {
 
 
         System.out.println("@@@@@@@@@"+"     "+ amount + "    " + checkAccount+checkAmount );
+        sess.invalidate();
         return "view1";
     }
 

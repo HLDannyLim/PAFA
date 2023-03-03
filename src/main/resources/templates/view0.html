@@ -34,13 +34,13 @@
                 <tr>
                     <td>Amount: </td>
                     <td>
-                        <input type="number" step="0.01" name="amount" size="30" value="10">
+                        <input type="number" step="0.01" name="amount" size="30" value="10" th:value="${amount}">
                     </td>
                 </tr>
                 <tr>
                     <td>Comments</td>
                     <td>
-                        <textarea name="comments" cols="30" rows="4"></textarea>
+                        <textarea name="comment" th:text="${comment}" cols="30" rows="4" ></textarea>
                     </td>
                 </tr>
                     <td>
